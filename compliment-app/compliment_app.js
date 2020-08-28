@@ -1,7 +1,22 @@
-// TODO: Add compliment list and random picker
+// Compliment list
+var complist = [`You're beautiful`,
+                `You're an awesome friend`,
+                `You're a gift to those around you`,
+                `You are awesome`,
+                `You are enough`,
+                `I'm grateful to know you`,
+                `Thank you for being there for me`];
+
+// Confirm button function
 function confirm() {
-    // Get text1
+    
+    // Take the text from form-input
     var text_val =  document.getElementById("text1").value;
-    // Change text2 value with text1
-    document.getElementById("text2").textContent = `You're beautiful ${text_val}`;
+    
+    // Take random integer for list index
+    var rand;
+    rand = Math.floor(Math.random() * complist.length);
+
+    // Merge texts
+    document.getElementById("text2").textContent = `${complist[rand]}` + ` ${text_val}`;
 };
